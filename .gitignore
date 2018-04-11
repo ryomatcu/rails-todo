@@ -33,7 +33,7 @@
 /config/master.key
 
 # Ignore dotenv files
-/config/.env
+.env
 
 # Ignore certificate files
 /config/*.pem
