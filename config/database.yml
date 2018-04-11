@@ -1,0 +1,21 @@
+default: &default
+  adapter: mysql2
+  pool: 5
+  timeout: 5000
+  host: <%= ENV.fetch("MYSQL_HOST") { "localhost" } %>
+  username: <%= ENV.fetch("MYSQL_USER") { "root" } %>
+  password: <%= ENV.fetch("MYSQL_PASS") { "" } %>
+  port: <%= ENV.fetch("MYSQL_PASS") { 3306 } %>
+  sslca: <%= ENV.fetch("MYSQL_CA") { "" } %>
+
+development:
+  <<: *default
+  database: <%= ENV.fetch("MYSQL_DB") { "db" } %>_development
+
+test:
+  <<: *default
+  database: <%= ENV.fetch("MYSQL_DB") { "db" } %>_test
+
+production:
+  <<: *default
+  database: <%= ENV.fetch("MYSQL_DB") { "db" } %>
