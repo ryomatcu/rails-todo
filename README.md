@@ -5,20 +5,64 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+## Ruby version
 
-* System dependencies
+2.4.1
 
-* Configuration
+## System dependencies
 
-* Database creation
+MySQL
+Azure Key Vault
 
-* Database initialization
+## Configuration
 
-* How to run the test suite
+Create Service Principal 
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ az ad sp create-for-rbac -n "http://my-key-vault" --role contributor
+```
 
-* Deployment instructions
+Copy .env.sample to .env
 
-* ...
+```
+$ cp .env.sample .env
+```
+
+Enter configuration information in .env
+
+```
+#
+# Azure Key Vault
+#
+AZURE_TENANT_ID="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+AZURE_CLIENT_ID="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+AZURE_CLIENT_SECRET="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+AZURE_SUBSCRIPTION_ID="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+```
+
+Create Azure Key Vault(secret)
+
+* MYSQLHOST
+* MYSQLUSER
+* MYSQLPASS
+* MYSQLPORT
+* MYSQLDB
+* MYSQLCA
+
+## Database creation
+
+```
+$ bin/rake db:create
+```
+
+## Database initialization
+
+```
+$ bin/rake db:migrate
+```
+
+## How to run the test suite
+
+```
+$ bin/bundle exec rspec
+```
