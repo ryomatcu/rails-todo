@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Rails ToDo sample">
+    <meta name="author" content="https://github.com/ryomatcu/rails-todo">
     <title>RailsTodo</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,6 +14,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; ryomatcu 2018</p>
+      </div>
+    </footer>
   </body>
 </html>
