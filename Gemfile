@@ -66,5 +66,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# MySQL
 gem 'mysql2'
+
+# dotenv
 gem 'dotenv-rails'
+
+# Azure Key Vault
+gem 'azure-key-vault', github: "ryomatcu/azure-key-vault"

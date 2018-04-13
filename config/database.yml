@@ -2,20 +2,20 @@ default: &default
   adapter: mysql2
   pool: 5
   timeout: 5000
-  host: <%= ENV.fetch("MYSQL_HOST") { "localhost" } %>
-  username: <%= ENV.fetch("MYSQL_USER") { "root" } %>
-  password: <%= ENV.fetch("MYSQL_PASS") { "" } %>
-  port: <%= ENV.fetch("MYSQL_PASS") { 3306 } %>
-  sslca: <%= ENV.fetch("MYSQL_CA") { "" } %>
+  host: <%= ENV.fetch("MYSQLHOST") { "localhost" } %>
+  username: <%= ENV.fetch("MYSQLUSER") { "root" } %>
+  password: <%= ENV.fetch("MYSQLPASS") { "" } %>
+  port: <%= ENV.fetch("MYSQLPASS") { 3306 } %>
+  sslca: <%= ENV.fetch("MYSQLCA") { "" } %>
 
 development:
   <<: *default
-  database: <%= ENV.fetch("MYSQL_DB") { "db" } %>_development
+  database: <%= ENV.fetch("MYSQLDB") { "db" } %>_development
 
 test:
   <<: *default
-  database: <%= ENV.fetch("MYSQL_DB") { "db" } %>_test
+  database: <%= ENV.fetch("MYSQLDB") { "db" } %>_test
 
 production:
   <<: *default
-  database: <%= ENV.fetch("MYSQL_DB") { "db" } %>
+  database: <%= ENV.fetch("MYSQLDB") { "db" } %>
