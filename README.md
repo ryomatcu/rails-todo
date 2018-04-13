@@ -11,8 +11,7 @@ Things you may want to cover:
 
 ## System dependencies
 
-MySQL
-Azure Key Vault
+MySQL / Azure Key Vault
 
 ## Configuration
 
