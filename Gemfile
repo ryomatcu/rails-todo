@@ -74,3 +74,5 @@ gem 'dotenv-rails'
 
 # Azure Key Vault
 gem 'azure-key-vault', github: "ryomatcu/azure-key-vault"
+
+gem 'tzinfo-data'
