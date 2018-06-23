@@ -11,3 +11,4 @@ WORKDIR /app
 
 ADD . /app/
 RUN bundle install --deployment --without test
+RUN sed -i -e 's/ruby2.3/ruby/g' vendor/bundle/ruby/2.3.0/bin/*
