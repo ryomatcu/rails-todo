@@ -6,7 +6,7 @@ default: &default
   username: <%= ENV.fetch("MYSQLUSER") { "root" } %>
   password: <%= ENV.fetch("MYSQLPASS") { "" } %>
   port: <%= ENV.fetch("MYSQLPASS") { 3306 } %>
-  sslca: <%= ENV.fetch("MYSQLCA") { "" } %>
+  # sslca: <%= ENV.fetch("MYSQLCA") { "" } %>
 
 development:
   <<: *default
