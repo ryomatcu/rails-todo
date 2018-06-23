@@ -7,7 +7,7 @@ application up and running.
 
 ## Ruby version
 
-2.4.1
+2.3.1
 
 ## System dependencies
 
@@ -46,7 +46,6 @@ Create Azure Key Vault(secret)
 * MYSQLPASS
 * MYSQLPORT
 * MYSQLDB
-* MYSQLCA
 
 ## Database creation
 
