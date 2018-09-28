@@ -9,6 +9,9 @@ RUN apt-get update && \
 RUN mkdir /app
 WORKDIR /app
 
-ADD . /app/
+ADD Gemfile /app/Gemfile
+ADD Gemfile.lock /app/Gemfile.lock
 RUN bundle install --deployment --without test
 RUN sed -i -e 's/ruby2.3/ruby/g' vendor/bundle/ruby/2.3.0/bin/*
+
+ADD . /app/
