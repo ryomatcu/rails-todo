@@ -30,17 +30,17 @@ module RailsTodo
       g.fixture_replacement :factory_bot, dir: "spec/factories"
     end
 
-    config.after_initialize do
-      bearer_token = KeyVault::Auth.new(ENV['AZURE_TENANT_ID'], ENV['AZURE_CLIENT_ID'], ENV['AZURE_CLIENT_SECRET']).get_bearer_token
-      vault = KeyVault::Client.new(ENV['AZURE_KEY_VAULT_NAME'], nil, bearer_token)
+    # config.after_initialize do
+    #   bearer_token = KeyVault::Auth.new(ENV['AZURE_TENANT_ID'], ENV['AZURE_CLIENT_ID'], ENV['AZURE_CLIENT_SECRET']).get_bearer_token
+    #   vault = KeyVault::Client.new(ENV['AZURE_KEY_VAULT_NAME'], nil, bearer_token)
 
-      # Get Secrets from Azure Key Vault
-      ENV['MYSQLHOST']  = vault.get_secret("MYSQLHOST", nil)
-      ENV['MYSQLUSER']  = vault.get_secret("MYSQLUSER", nil)
-      ENV['MYSQLPASS']  = vault.get_secret("MYSQLPASS", nil)
-      ENV['MYSQLPORT']  = vault.get_secret("MYSQLPORT", nil)
-      ENV['MYSQLDB']    = vault.get_secret("MYSQLDB", nil)
-      ENV['MYSQLCA']    = vault.get_secret("MYSQLCA", nil)
-    end
+    #   # Get Secrets from Azure Key Vault
+    #   ENV['MYSQLHOST']  = vault.get_secret("MYSQLHOST", nil)
+    #   ENV['MYSQLUSER']  = vault.get_secret("MYSQLUSER", nil)
+    #   ENV['MYSQLPASS']  = vault.get_secret("MYSQLPASS", nil)
+    #   ENV['MYSQLPORT']  = vault.get_secret("MYSQLPORT", nil)
+    #   ENV['MYSQLDB']    = vault.get_secret("MYSQLDB", nil)
+    #   ENV['MYSQLCA']    = vault.get_secret("MYSQLCA", nil)
+    # end
   end
 end
